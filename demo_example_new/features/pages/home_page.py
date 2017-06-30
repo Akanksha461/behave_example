@@ -34,7 +34,7 @@ class HomePage(Browser):
         self.driver.find_element(*HomePageLocator.SO_LOGO).is_displayed()
 
     def count_displayed(self):
-        return self.driver.find_element(*HomePageLocator.QUESTION_COUNT).text
+        return print(self.driver.find_element(*HomePageLocator.QUESTION_COUNT).text)
 
     def add_tag(self,address):
         self.driver.get(address+"/questions/tagged/angular")

@@ -32,11 +32,12 @@ def step_impl(context):
 
 @step('page title contains the tag')
 def step_impl(context):
-    assert_in(context.home_page.get_page_title(), "angular")
+    assert_in("angular",context.home_page.get_page_title())
 
 @step('Shows all questions tagged with it')
 def step_impl(context):
     context.home_page.count_displayed()
+    print(context.home_page.count_displayed())
 
 
 
