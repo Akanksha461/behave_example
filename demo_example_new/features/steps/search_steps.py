@@ -1,4 +1,4 @@
-from nose.tools import assert_equal, assert_true
+from nose.tools import assert_equal, assert_true,assert_in
 from selenium.webdriver.common.by import By
 
 @step('I navigate to the PyPi Home page')
@@ -17,3 +17,28 @@ def step_impl(context):
 @step('I see a search result "{search_result}"')
 def step_impl(context, search_result):
     assert_true(context.search_results_page.find_search_result(search_result))
+
+@step('I navigate to StackOverflow homepage')
+def step_impl(context):
+    context.home_page.navigate("https://stackoverflow.com")
+
+@step('StackOverflow Logo is displayed')
+def step_impl(context):
+    context.home_page.logo_displayed()
+
+@step('I add any tag to the URL')
+def step_impl(context):
+    context.home_page.add_tag('https://stackoverflow.com')
+
+@step('page title contains the tag')
+def step_impl(context):
+    assert_in(context.home_page.get_page_title(), "angular")
+
+@step('Shows all questions tagged with it')
+def step_impl(context):
+    context.home_page.count_displayed()
+
+
+
+
+
