@@ -1,5 +1,6 @@
 from nose.tools import assert_equal, assert_true,assert_in
 from selenium.webdriver.common.by import By
+import time
 
 @step('I navigate to the PyPi Home page')
 def step_impl(context):
@@ -46,6 +47,43 @@ def step_impl(context):
 @step('Goes to next page')
 def step_impl(context):
     context.home_page.next_page()
+    time.sleep(5)
+
+@step('Takes screenshot of the page 2')
+def step_impl(context):
+    context.home_page.take_screenshot()
+
+
+@step('Goes to next page 3')
+def step_impl(context):
+    context.home_page.next_page()
+    time.sleep(5)
+
+@step('Takes screenshot of the page 3')
+def step_impl(context):
+    context.home_page.take_screenshot()
+
+@step('Goes to next page 4')
+def step_impl(context):
+    context.home_page.next_page()
+    time.sleep(5)
+
+@step('Takes screenshot of the page 4')
+def step_impl(context):
+    context.home_page.take_screenshot()
+
+@step('Goes to next page 5')
+def step_impl(context):
+    context.home_page.next_page()
+    time.sleep(5)
+
+@step('Takes screenshot of the page 5')
+def step_impl(context):
+    context.home_page.take_screenshot()
+
+
+
+
 
 
 
