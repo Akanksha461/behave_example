@@ -39,6 +39,14 @@ def step_impl(context):
     context.home_page.count_displayed()
     print(context.home_page.count_displayed())
 
+@step('Takes screenshot of the page')
+def step_impl(context):
+    context.home_page.take_screenshot()
+
+@step('Goes to next page')
+def step_impl(context):
+    context.home_page.next_page()
+
 
 
 

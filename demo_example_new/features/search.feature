@@ -12,3 +12,6 @@ Feature: Search
       When I add any tag to the URL
       Then page title contains the tag
       And Shows all questions tagged with it
+      And Takes screenshot of the page
+      And Goes to next page
+

@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 from browser import Browser
+from random import randint
+
 
 class HomePageLocator(object):
     # Home Page Locators
@@ -9,6 +11,7 @@ class HomePageLocator(object):
     SUBMIT_BUTTON = (By.ID, "submit")
     SO_LOGO = (By.CSS_SELECTOR,"span.-img")
     QUESTION_COUNT = (By.CSS_SELECTOR,"div.summarycount.al")
+    PAGE_NEXT = (By.CSS_SELECTOR,"span.page-numbers.next")
 
 
 class HomePage(Browser):
@@ -38,5 +41,13 @@ class HomePage(Browser):
 
     def add_tag(self,address):
         self.driver.get(address+"/questions/tagged/angular")
+
+    def take_screenshot(self):
+        self.driver.get_screenshot_as_file('screenshot'+str(randint(0, 9))+".png")
+
+    def next_page(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        self.click_element(*HomePageLocator.PAGE_NEXT)
+
 
 
