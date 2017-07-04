@@ -6,7 +6,7 @@ Feature: Search
     Then I am taken to the PyPi Search Results page
     And I see a search result "behave 1.2.5"
 
-    Scenario: StackOverflow
+    Scenario: StackOverflow Automation
       Given I navigate to StackOverflow homepage
       And StackOverflow Logo is displayed
       When I add any tag to the URL
