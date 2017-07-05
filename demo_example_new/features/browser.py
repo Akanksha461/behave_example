@@ -1,5 +1,5 @@
 from selenium import webdriver
-chrome_path ="/usr/local/lib/python3.5/site-packages/selenium/chromedriver"
+chrome_path =""/home/aj/Documents/chromedriver""
 
 class Browser(object):
 
